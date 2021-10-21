@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 5m
+
 git config --global user.name "TheSanty"
 git config --global user.email "sudhiryadav.igi@gmail.com"
 
