@@ -1,0 +1,11 @@
+task:
+  name: rom
+  container:
+    dockerfile: Dockerfile
+    cpu: 2
+    memory: 4G
+  environment:
+    CIRRUS_WORKING_DIR: "/tmp/ci"
+    TOKEN: "ENCRYPTED[732b84222b6e2362fe00d2e175a03dd9c6d21ff01f9846dd53b86ee31d6b4cb364c8cfe73028f14295743af81dbaca49]"
+  build_script:
+      - bash loop.sh
