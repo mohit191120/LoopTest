@@ -1,5 +1,8 @@
 #!/bin/bash
 
+git config --global user.name "TheSanty"
+git config --global user.email "sudhiryadav.igi@gmail.com"
+
 git clone https://github.com/mohit191120/Builder-CI loop
 cd loop || exit 1
 echo $(( RANDOM - ( RANDOM % RANDOM ) )) > build.txt
