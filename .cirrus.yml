@@ -6,6 +6,6 @@ task:
     memory: 4G
   environment:
     CIRRUS_WORKING_DIR: "/tmp/ci"
-    TOKEN: "ENCRYPTED[732b84222b6e2362fe00d2e175a03dd9c6d21ff01f9846dd53b86ee31d6b4cb364c8cfe73028f14295743af81dbaca49]"
+    TOKEN: "ENCRYPTED[dc9db065982a17efc235583338da7f0900c651abc53b944120784288e09fcccbbc0dfe0fef819a4a9be2b563465bcf76]"
   build_script:
       - bash loop.sh
