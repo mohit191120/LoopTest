@@ -1,13 +1,26 @@
 #!/bin/bash
 
-sleep 5m
+sleep 117m
 
 git config --global user.name "TheSanty"
 git config --global user.email "sudhiryadav.igi@gmail.com"
 
-git clone https://github.com/mohit191120/Builder-CI loop
-cd loop || exit 1
-echo $(( RANDOM - ( RANDOM % RANDOM ) )) > builds.txt
-git add builds.txt
-git commit -m "Build : Loop"
-git push -q https://${TOKEN}@github.com/mohit191120/Builder-CI HEAD:sakura
+telegram_message() {
+	curl -s -X POST "https://api.telegram.org/bot${BOTTOKEN}/sendMessage" -d chat_id="${CHATID}" \
+	-d "parse_mode=Markdown" \
+	-d text="$1"
+}
+
+if [ -f $(pwd)/rom/out/target/product/${T_DEVICE}/${ZIPNAME} ]; then
+       telegram_message "
+              	*✅ Build Finished No Loop Required ✅*"  &> /dev/null
+else
+       git clone https://github.com/TheSanty/GitLol loop
+       cd loop || exit 1
+       echo $(( RANDOM - ( RANDOM % RANDOM ) )) > builds.txt
+       git add builds.txt
+       git commit -m "Build : Loop"
+       git push -q https://${TOKEN}@github.com/TheSanty/GitLol HEAD:main
+       telegram_message "
+              	*🌟 $rom Build Loop 🌟*"  &> /dev/null
+fi
