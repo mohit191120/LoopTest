@@ -2,7 +2,7 @@ task:
   name: rom
   container:
     dockerfile: Dockerfile
-    cpu: 9
+    cpu: 8
     memory: 4G
   environment:
     CIRRUS_WORKING_DIR: "/tmp/ci"
