@@ -1,5 +1,6 @@
 task:
   name: rom
+  timeout_in: 130m
   container:
     dockerfile: Dockerfile
     cpu: 2
