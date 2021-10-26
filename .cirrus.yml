@@ -3,8 +3,8 @@ task:
   timeout_in: 4h
   container:
     dockerfile: Dockerfile
-    cpu: 2
-    memory: 4G
+    cpu: 8
+    memory: 32G
   environment:
     CIRRUS_WORKING_DIR: "/tmp/ci"
     TOKEN: "ENCRYPTED[dc9db065982a17efc235583338da7f0900c651abc53b944120784288e09fcccbbc0dfe0fef819a4a9be2b563465bcf76]"
